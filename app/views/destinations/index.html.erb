@@ -1,0 +1,19 @@
+
+
+<h1>All Destinations</h1>
+
+<div class="row">
+
+  <% @destinations.each_slice(3) do |three_destinations| %>
+  <div class="row">
+    <% three_destinations.each do |destination| %>
+    <div class="col-md-4">
+      <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
+      <img src="<%=destination.images.first.url%>">
+      <h2>Description: <%= destination.description %></h2>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
