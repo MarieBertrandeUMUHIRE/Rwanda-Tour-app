@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ .body {
+    margin-left: auto;
+    margin-right: auto;
+ }
+ h1 { 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+H2 { text-align: center }
+
+ #background {
+   background: url(nice.jpg) no-repeat center center fixed; 
+   min-width: 100%;
+   min-height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: absolute; 
+   top: 120px; 
+   left: 0; 
+   right: 0; 
+   bottom: 0; 
+   margin: auto; 
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+    height: auto; 
+    width: 1500px; 
+    max-width: 1400px; 
+    max-height: 500px;
+}

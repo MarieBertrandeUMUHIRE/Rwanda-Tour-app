@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'destinations#index'
+  get "/", to: 'pages#index'
   get "/destinations", to:'destinations#index'
   get "/destinations/new", to: 'destinations#new'
   get "/destinations/:id", to:'destinations#show'
@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
   get "/orders", to:'orders#new'
+  get "images", to: 'images#index'
 
   get "/images/new", to:'images#new'
   post "/images", to:'images#create'
   get "/images/:id/edit", to: 'images#edit'
   patch "images/:id", to: 'images#update'
+  delete "images/:id", to: 'images#destroy'
+
 end

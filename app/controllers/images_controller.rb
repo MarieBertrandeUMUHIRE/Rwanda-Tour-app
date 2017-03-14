@@ -1,4 +1,7 @@
 class ImagesController < ApplicationController
+  def index
+    @images = Image.all
+  end
   def new
     @destination = Destination.find_by(id: params[:destination_id])
   end
@@ -19,5 +22,9 @@ class ImagesController < ApplicationController
       redirect_to "/destinations/#{image.destination_id}"
     end
   end
-
-end
+ def destroy
+  @image = Image.find_by(id: params[:id])
+  @image.destroy
+  redirect_to "/destinations"
+ end
+end 

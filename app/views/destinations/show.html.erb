@@ -6,10 +6,10 @@
 
 <% @destination.images.each do |image| %>
   <img class="show-images" src="<%= image.url %>">
+  <%= button_to 'Delete', "/images/#{image.id}", method: :delete %>
 <% end %>
 
 <button class="btn btn-success"><a href="/images/new?destination_id=<%= @destination.id %>">Add Image</a></button>
 <button class="btn btn-success"><a href="/destinations/<%= @destination.id %>/edit">Edit</a></button>
-<%= link_to "Delete", "/destinations/#{@destination.id}", method: :delete %>
 
 
