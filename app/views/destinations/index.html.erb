@@ -1,19 +1,22 @@
+<div class="container">
+  <h1>All Destinations</h1>
 
-
-<h1>All Destinations</h1>
-
-<div class="row">
-
-  <% @destinations.each_slice(3) do |three_destinations| %>
   <div class="row">
-    <% three_destinations.each do |destination| %>
-    <div class="col-md-4">
-      <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
-      <h2>Description: <%= destination.description %></h2>
-      <img src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+
+    <% @destinations.each_slice(3) do |three_destinations| %>
+    <div class="row">
+      <% three_destinations.each do |destination| %>
+      <div class="col-md-4">
+        <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
+        <h2>Description: <%= destination.description %></h2>
+        <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+      </div>
+      <% end %>
     </div>
     <% end %>
   </div>
-  <% end %>
+  <button class="btn btn-success"><a href="/destinations/new">Add Destination</a></button>
 </div>
+
+
 

@@ -1,5 +1,7 @@
-<%= form_tag "/images", method: :post do %>
-<input type="hidden" name="destination_id" value="<%= @destination.id %>">
-Image Url:<%= text_field_tag :url %>
-<input type="submit" value="Submit">
-<% end %>
+<div class="container">
+  <%= form_tag "/images", method: :post do %>
+  <input type="hidden" name="destination_id" value="<%= @destination.id %>">
+  Image Url:<%= text_field_tag :url %>
+  <input type="submit" value="Submit">
+  <% end %>
+</div>

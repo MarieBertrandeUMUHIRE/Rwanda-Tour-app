@@ -13,17 +13,35 @@
  *= require_tree .
  *= require_self
  */
- .body {
+ /*.body {
     margin-left: auto;
     margin-right: auto;
- }
- h1 { 
+ }*/
+ /*h1 { 
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-  }
-H2 { text-align: center }
+  }*/
 
+#mainNav {
+  height:5px;
+  position: top;
+  margin-left: auto;
+}
+
+ a:link { 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+/*#page-wrap { 
+  text-align:center;
+  margin-left: -2000px;
+  left: 50%;
+  width: 100px;
+  margin: 50px;
+ }*/
  #background {
    background: url(nice.jpg) no-repeat center center fixed; 
    min-width: 100%;
@@ -38,11 +56,27 @@ H2 { text-align: center }
    margin: auto; 
 }
 
-img{
+.home{
     margin-left: auto;
     margin-right: auto;
     height: auto; 
     width: 1500px; 
     max-width: 1400px; 
     max-height: 500px;
+}
+.show-images{
+  margin-left: auto;
+  margin-right: auto;
+  height: auto; 
+  width: 500px; 
+  max-width: 600px; 
+  max-height: 500px;  
+}
+.index{
+   margin-left: auto;
+   margin-right: auto;
+   height: 160px; 
+   width: auto; 
+   max-width: 400px; 
+   max-height: 500px;   
 }

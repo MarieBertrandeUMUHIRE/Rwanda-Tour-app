@@ -1,7 +1,15 @@
 class DestinationsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :update]
   def index
-    @destinations = Destination.all
+    if params[:filter] 
+      input = params[:filter].capitalize
+      @destinations = Category.find_by(title: input).destinations.all
+    elsif params[:filter]
+      place = params[:filter].capitalize
+      @destinations = Region.find_by(name: place).destinations.all
+    else
+     @destinations = Destination.all
+    end
   end
   def show
     @destination = Destination.find_by(id: params[:id])
@@ -50,6 +58,14 @@ class DestinationsController < ApplicationController
     else
       redirect_to :back
     end
+  end
+  def search
+    search_query = params[:search_input]
+    @destinations = Destination.where("name LIKE ? OR description LIKE ?", "%#{search_query}%", "%#{search_query}%")
+    if @destinations.empty?
+      flash[:info] = "No destinations found in search"
+    end
+    render :index
   end
 end
 

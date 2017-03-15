@@ -1,15 +1,18 @@
+<div class="container">
+
+  <h1><%= @destination.name %></h1>
+
+  <h2><%= @destination.description %></h2>
+
+  <% @destination.images.each do |image| %>
+    <img class="show-images" src="<%= image.url %>">
+    <%= button_to 'Delete', "/images/#{image.id}", method: :delete %>
+  <% end %>
+
+  <a href="/images/new?destination_id=<%= @destination.id %>" class="btn btn-success" role="button">Add Image</a>
+  <a href="/destinations/<%= @destination.id %>/edit" class="btn btn-success" role="button">Edit</a>
+</div>
 
 
-<h1><%= @destination.name %></h1>
-
-<h2><%= @destination.description %></h2>
-
-<% @destination.images.each do |image| %>
-  <img class="show-images" src="<%= image.url %>">
-  <%= button_to 'Delete', "/images/#{image.id}", method: :delete %>
-<% end %>
-
-<button class="btn btn-success"><a href="/images/new?destination_id=<%= @destination.id %>">Add Image</a></button>
-<button class="btn btn-success"><a href="/destinations/<%= @destination.id %>/edit">Edit</a></button>
 
 

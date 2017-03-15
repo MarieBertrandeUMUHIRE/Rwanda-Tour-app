@@ -1,5 +1,5 @@
+<div class="container">
   <h1>New Destination</h1>
-
 
   <%= form_tag "/destinations", method: :post do %>
   <div>
@@ -17,16 +17,17 @@
     <% end %>
   </select>
   
-</div>
-<div>
- Category:
- <select name="category_id">
-  <option value="" disabled selected>Select your option</option>
-  <% @categories.each do |category| %>
-  <option value="<%=category.id %>"><%=category.title%> </option>
-  <% end %>
-</select>
+  </div>
+  <div>
+   Category:
+   <select name="category_id">
+    <option value="" disabled selected>Select your option</option>
+    <% @categories.each do |category| %>
+    <option value="<%=category.id %>"><%=category.title%> </option>
+    <% end %>
+  </select>
 
+  </div>
+  <input type="submit" value="Create destination">
+  <% end %>
 </div>
-<input type="submit" value="Create destination">
-<% end %>
