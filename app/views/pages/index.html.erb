@@ -1,101 +1,281 @@
-<!-- Add this css File in head tag-->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+  <!-- Add this css File in head tag-->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
+-->
+  <!--  
+         If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
+         Slide effect: slide, fade
+         Text Align: slide_style_center, slide_style_left, slide_style_right
+         Add Text Animation: https://daneden.github.io/animate.css/
+       -->
+       <head>
+         <link rel="stylesheet" href="http://mogulsdemo.com/html/pride-home/css/font-awesome.css">
 
-<!--  
-       If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
-       Slide effect: slide, fade
-       Text Align: slide_style_center, slide_style_left, slide_style_right
-       Add Text Animation: https://daneden.github.io/animate.css/
-     -->
+         <div class="jain_container">
 
-
-     <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
-
-       <!-- Indicators -->
-       <ol class="carousel-indicators">
-         <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-         <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-         <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-       </ol>
-
-       <!-- Wrapper For Slides -->
-       <div class="carousel-inner" role="listbox">
-
-         <!-- Third Slide -->
-         <div class="item active">
-
-           <!-- Slide Background -->
-           <img class="home" src="https://www.cedarberg-travel.com/wp-content/uploads/cedarberg-nyungwe-forest-lodge-presidential-suite-1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-           <div class="bs-slider-overlay"></div>
-
-           <div class="container">
-             <div class="row">
-               <!-- Slide Text Layer -->
-               <div class="slide-text slide_style_right">
-                 <h1 data-animation="animated zoomInLeft">Feel at Home</h1>
-             <a href="/destinations" target="_blank" class="btn btn-default">View more Destinations</a>
-
+         <nav class="navbar navbar-de navbar-custom navbar-fixed-top navbar-offset" role="navigation" style="background-color:#EAECEE">
+             <div class="container1 container-fluid"> 
+               <div class="navbar-header">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                   <span class="sr-only">Toggle navigation</span>
+                  
+                   <i class="icon-menu"></i> Menu
+                 </button>
+                 <a class="navbar-brand" href="#"> <img class="flag" src="<%= image_url('flag.png') %>" /></a>
                </div>
-               
+
+
+               <div class="col-md-8">
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                   <div class="col-md-12">
+                     <ul class="nav navbar-nav">
+
+                       <li class="dropdown mega-dropdown">
+                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">FIND DESTINATION <span class="caret"></span></a>        
+                         <ul class="dropdown-menu mega-dropdown-menu">
+                           <li class="col-sm-4">
+                             <ul>
+                               <li class="dropdown-header">View Sites in your Location</li>
+                               <li><a href="#">Kigali</a></li>
+                               <li><a href="#">Nothern Province</a></li>
+                               <li><a href="#">Southern Province</a></li>
+                               <li><a href="#">Western Province</a></li>
+                               <li><a href="#">Eastern Province</a></li>
+                                 <!-- <li class="divider"></li>
+                                 <li class="dropdown-header">Fonts</li>
+                                               <li><a href="#">Glyphicon</a></li>
+                                               <li><a href="#">Google Fonts</a></li> -->
+                                             </ul>
+                                          <!--  </li>
+                                           <li class="col-sm-4">
+                                             <ul>
+                                               <li class="dropdown-header">Plus</li>
+                                               <li><a href="#">Navbar Inverse</a></li>
+                                               <li><a href="#">Pull Right Elements</a></li>
+                                               <li><a href="#">Coloured Headers</a></li>                            
+                                               <li><a href="#">Primary Buttons & Default</a></li>              
+                                             </ul>
+                                           </li>
+                                           <li class="col-sm-4">
+                                             <ul>
+                                               <li class="dropdown-header">Much more</li>
+                                               <li><a href="#">Easy to Customize</a></li>
+                                               <li><a href="#">Calls to action</a></li>
+                                               <li><a href="#">Custom Fonts</a></li>
+                                               <li><a href="#">Slide down on Hover</a></li>                         
+                                             </ul>
+                                           </li>
+                                         -->
+                                       </ul>       
+                                     </li>
+
+
+                                     <li><a href="#"></a></li><li>
+                                       <!-- <a href="#">PLAN YOUR EVENTS</a></li><li>
+                                       <a href="#">OUR BRANDS</a></li>
+
+                                       <li><a href="#">LOYALTY</a></li>
+                                       <li> -->
+                                         <a href="pages/:id">CONTACT US</a>
+                                       </li>
+
+                                     </ul>
+                                   </div>
+                                   <div class="col-md-12">
+                                     <form class="form-horizontal form-horizontal_x">
+                                       <div class="col-md-12">
+                                         <div class="form-group">
+
+                                          <!--  <div class="col-sm-4">
+                                            <select  name="hotel" id="hotel" required="" class="form-control" onchange="changeFormaction2(this.value);">
+                                             <option value="" selected="">Select Hotel</option>
+                                             <option value="">Pride Plaza Hotel Ahmedabad</option>
+                                             <option value="67964">The Pride Hotel Bengaluru</option>
+                                             <option value="29191">The Pride Hotel Nagpur</option>
+                                             <option value="67963">The Pride Hotel Chennai</option>
+                                             <option value="29190">The Pride Hotel, Pune</option>
+                                             <option value="67962">Pride Plaza Hotel Kolkata</option>
+                                             <option value="67580">Pride Plaza Hotel Delhi</option>
+                                             <option value="8">Pride Amber Vilas Jaipur</option>
+                                             <option value="65728">Pride Surya Mountain Resort Mcleodganj</option>
+                                             <option value="60533">Pride Sun Village Resort SPA,Goa</option>
+                                             <option value="138227">The Pride Biznotel,Vadodara</option>
+                                           </select> -->
+
+                                           <!-- <input type="text" class="form-control" id="email" placeholder="Enter email">
+                                         </div>
+                                       -->
+                                        <!--  <div class="col-sm-3">          
+                                           <input type="text" class="form-control" id="pwd" placeholder="Search">
+                                         </div> -->
+
+                                         <div class="col-sm-8">          
+                                           <input type="text" class="form-control" id="pwd" placeholder="Search">
+                                         </div>
+
+                                         <div class="col-sm-2">
+                                           <button type="submit" class="btn btn-default">Submit</button>
+                                         </div>
+                                       </div>
+                                     </div>
+
+                                   </form>
+                                 </div>
+
+                               </div>
+                             </div>
+
+                             <div class="col-md-2 medias">
+
+                               <ul> 
+                                 <li> <a href=""> Facebook <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                 <li> <a href="">LinkedIn<i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                 
+                               </ul>
+
+                               <div class="classus">
+
+                                 <p> Call us +250 789539076</p>
+
+                               </div>
+
+                             </div>
+
+
+                           </div>
+
+                         </nav>
+                       </head>
+                       <body>
+
+                         <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+                           <!-- Indicators -->
+                           <ol class="carousel-indicators">
+                             <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                             <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                             <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+                           </ol>
+
+                           <!-- Wrapper For Slides -->
+                           <div class="carousel-inner" role="listbox">
+
+                             <!-- Third Slide -->
+                             <div class="item active">
+
+                               <!-- Slide Background -->
+                               <img class="home" src="https://www.cedarberg-travel.com/wp-content/uploads/cedarberg-nyungwe-forest-lodge-presidential-suite-1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+
+                               <div class="bs-slider-overlay"></div>
+
+                               <div class="container">
+                                 <div class="row">
+                                   <!-- Slide Text Layer -->
+                                   <div class="slide-text slide_style_right">
+                                     <h1 data-animation="animated zoomInLeft">Feel at Home</h1>
+                                     <a href="/destinations" target="_blank" class="btn btn-default">View more Destinations</a>
+
+                                   </div>
+
+                                 </div>
+                               </div>
+                             </div>
+                             <!-- End of Slide -->
+
+                             <!-- Second Slide -->
+                             <div class="item">
+
+                               <!-- Slide Background -->
+                               <img class="home" src="<%= image_url('bedroom.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                               <div class="bs-slider-overlay"></div>
+                               <!-- Slide Text Layer -->
+                               <div class="slide-text slide_style_center">
+                                 <h1 data-animation="animated flipInX"></h1>
+                                 <h1 data-animation="animated zoomInLeft">Rwanda is the best place to be</h1>
+               <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+               <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
              </div>
            </div>
-         </div>
-         <!-- End of Slide -->
+           <!-- End of Slide -->
 
-         <!-- Second Slide -->
-         <div class="item">
+           <!-- Third Slide -->
+           <div class="item">
 
-           <!-- Slide Background -->
-           <img class="home" src="http://www.booking-rwanda-hotels.com/sites/default/files/Nyungwe%20Forest%20Lodge%20Rwanda%20(6).jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-           <div class="bs-slider-overlay"></div>
-           <!-- Slide Text Layer -->
-           <div class="slide-text slide_style_center">
-             <h1 data-animation="animated flipInX"></h1>
-             <h1 data-animation="animated zoomInLeft">Rwanda is the best place to be</h1>
-             <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
-             <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
-           </div>
-         </div>
-         <!-- End of Slide -->
-
-         <!-- Third Slide -->
-         <div class="item">
-
-           <!-- Slide Background -->
-           <img class="home" src="http://www.jambotoursrwanda.com/images/gallery/JamboRecommendedHotels/Nyungwe_Forest_Lodge/Nyungwe_Forest_Lodge_Poolside_Restaurant.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-           <div class="bs-slider-overlay"></div>
-           <!-- Slide Text Layer -->
-           <div class="slide-text slide_style_left">
-             <h1 data-animation="animated zoomInRight">Your happiness is what we treasure the most</h1>
-             <p data-animation="animated fadeInLeft"></p>
-            <!--  <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
-             <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a> -->
-           </div>
-         </div>
-         <!-- End of Slide -->
-
-        <!-- Second Slide -->
-        <div class="item">
-
-          <!-- Slide Background -->
-          <img class="home" src="https://cdn.ostrovok.ru/t/1024x768/mec/62/75/6275e969ece973f80d6ab1ac53b2b88f210b52d2.jpeg" alt="Bootstrap Touch Slider"  class="slide-image"/>
-          <div class="bs-slider-overlay"></div>
-          <!-- Slide Text Layer -->
-          <div class="slide-text slide_style_center">
-            <h1 data-animation="animated flipInX"></h1>
-            <h1 data-animation="animated zoomInLeft">Pretty mega awesome!!!</h1>
-            <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
-            <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+             <!-- Slide Background -->
+             <img class="home" src="http://www.jambotoursrwanda.com/images/gallery/JamboRecommendedHotels/Nyungwe_Forest_Lodge/Nyungwe_Forest_Lodge_Poolside_Restaurant.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+             <div class="bs-slider-overlay"></div>
+             <!-- Slide Text Layer -->
+             <div class="slide-text slide_style_left">
+               <h1 data-animation="animated zoomInRight">Your happiness is what we treasure the most</h1>
+               <p data-animation="animated fadeInLeft"></p>
+              <!--  <a href="http://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInLeft">select one</a>
+              <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInRight">select two</a> -->
+            </div>
           </div>
-        </div>
-        <!-- End of Slide -->
+          <!-- End of Slide -->
 
-       </div><!-- End of Wrapper For Slides -->
+          <!-- Second Slide -->
+          <div class="item">
 
-       <!-- Left Control -->
-       <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+            <!-- Slide Background -->
+            <img class="home" src="https://cdn.ostrovok.ru/t/1024x768/mec/62/75/6275e969ece973f80d6ab1ac53b2b88f210b52d2.jpeg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+            <div class="bs-slider-overlay"></div>
+            <!-- Slide Text Layer -->
+            <div class="slide-text slide_style_center">
+              <h1 data-animation="animated flipInX"></h1>
+              <h1 data-animation="animated zoomInLeft">Pretty mega awesome!!!</h1>
+              <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+              <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+            </div>
+          </div>
+          <!-- End of Slide -->
+          <div class="item">
+
+            <!-- Slide Background -->
+            <img class="home" src="<%= image_url('giraffes.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+            <div class="bs-slider-overlay"></div>
+            <!-- Slide Text Layer -->
+            <div class="slide-text slide_style_center">
+              <h1 data-animation="animated flipInX"></h1>
+              <h1 data-animation="animated zoomInLeft">Peace, Unity, and Patriotism </h1>
+              <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+              <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+            </div>
+          </div>
+          <div class="item">
+
+            <!-- Slide Background -->
+            <img class="home" src="<%= image_url('forest.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+            <div class="bs-slider-overlay"></div>
+            <!-- Slide Text Layer -->
+            <div class="slide-text slide_style_center">
+              <h1 data-animation="animated flipInX"></h1>
+              <h1 data-animation="animated zoomInLeft">Natural beauty everywhere</h1>
+              <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+              <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+            </div>
+          </div>
+          <div class="item">
+
+            <!-- Slide Background -->
+            <img class="home" src="<%= image_url('kivu.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+            <div class="bs-slider-overlay"></div>
+            <!-- Slide Text Layer -->
+            <div class="slide-text slide_style_center">
+              <h1 data-animation="animated flipInX"></h1>
+              <h1 data-animation="animated zoomInLeft">Extraordinary views around</h1>
+              <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
+              <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
+            </div>
+          </div>
+
+        </div><!-- End of Wrapper For Slides -->
+
+        <!-- Left Control -->
+        <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
          <span class="fa fa-angle-left" aria-hidden="true"></span>
          <span class="sr-only">Previous</span>
        </a>
@@ -107,6 +287,4 @@
        </a>
 
      </div> <!-- End  bootstrap-touch-slider Slider -->
-
-
-
+   </body>

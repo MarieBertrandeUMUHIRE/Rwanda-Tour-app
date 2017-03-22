@@ -1,14 +1,4 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>RwandaTourApp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
-    <% unless controller.controller_name == "pages" && controller.action_name == "index"%>
-    <nav id="mainNav" class="navbar navbar-inverse navbar-custom navbar" style="height:50px">
+ <nav id="mainNav" class="navbar navbar-inverse navbar-custom navbar-fixed-top navbar-offset">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">UMUHIRE LTD</a>
       </div>
@@ -30,8 +20,7 @@
           <li><a href="/destinations?filter=parks">Visit Parks </a></li>
             <li><a href="destinations?filter=lakes">Visit Lakes</a></li>
             <li><a href="/destinations?filter=museums">Visit Museums<span class="sr-only">(current)</span></a></li>
-             <li><a href="/destinations?filter=hotels">Visit Hotels<span class="sr-only">(current)</span></a></li>
-            <li><a href="/destinations?filter=supermarkets">View Supermarkets<span class="sr-only">(current)</span></a></li>
+            <li><a href="/destinations?filter=hotels">Visit Hotels<span class="sr-only">(current)</span></a></li>
             <li><a href="/destinations?filter=other">Other<span class="sr-only">(current)</span></a></li>
           </ul>
         </li>
@@ -57,27 +46,3 @@
       </ul>
     </div>
   </nav>
-  <% end %>
-</head>
-
-<body class="body">
-  <div class="flash-message">
-    <% flash.each do |name, message| %>
-    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong><%=message%></strong>
-      <% end %>
-      <hr>
-    </div>
-
-    <%= yield %>
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <p>Copyright &copy; 2017, UMUHIRE LTD - Kigali</p>
-        </div>
-      </footer>
-    </div>
-  </body>
-  </html>

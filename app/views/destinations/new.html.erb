@@ -1,5 +1,13 @@
 <div class="container">
   <h1>New Destination</h1>
+  <ul>
+    <% if @destination.errors.any? %>
+      <% @destination.errors.full_messages.each do |message| %>
+        <li class="model-errors"><%= message %></li> 
+      <% end %>
+    <% end %>
+  </ul>
+
 
   <%= form_tag "/destinations", method: :post do %>
   <div>

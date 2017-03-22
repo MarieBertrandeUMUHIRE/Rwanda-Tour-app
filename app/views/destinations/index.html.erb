@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container body">
   <h1>All Destinations</h1>
 
   <div class="row">
@@ -10,12 +10,14 @@
         <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
         <h2>Description: <%= destination.description %></h2>
         <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+           <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
       </div>
       <% end %>
     </div>
     <% end %>
   </div>
   <button class="btn btn-success"><a href="/destinations/new">Add Destination</a></button>
+   <button class="btn btn-success"><a href="/destinations">All Destinations</a></button>
 </div>
 
 

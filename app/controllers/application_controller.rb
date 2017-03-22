@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      flash[:danger] = "Access Denied"
-      redirect_to "/"
+      redirect_to "/destinations"
+      flash[:danger] = "Access Denied, log in first!!"
     end
   end
 end

@@ -16,6 +16,7 @@ class DestinationsController < ApplicationController
   end
 
   def new
+    @destination = Destination.new
     @regions = Region.all
     @categories = Category.all
   end
@@ -63,9 +64,15 @@ class DestinationsController < ApplicationController
     search_query = params[:search_input]
     @destinations = Destination.where("name LIKE ? OR description LIKE ?", "%#{search_query}%", "%#{search_query}%")
     if @destinations.empty?
-      flash[:info] = "No destinations found in search"
+      flash[:info] = "No Results"
     end
     render :index
+  end
+    def destroy
+    @destination = Destination.find_by(id: params[:id])
+    @destination.destroy
+    flash[:danger] = "Destination Deleted"
+    redirect_to "/destinations"
   end
 end
 
