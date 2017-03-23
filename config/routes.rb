@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/", to: 'pages#index'
+  get "/pages", to: 'pages#emergency'
   get "/pages/:id", to: 'pages#show'
   get "/destinations", to:'destinations#index'
   get "/destinations/new", to: 'destinations#new'

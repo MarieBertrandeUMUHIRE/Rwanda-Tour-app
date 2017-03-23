@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+
+   <!--  the following code stops the general nav-bar from appearing on the home page -->
+   
     <% unless controller.controller_name == "pages" && controller.action_name == "index"%>
     <nav id="mainNav" class="navbar navbar-inverse navbar-custom navbar" style="height:50px">
       <div class="navbar-header">
@@ -16,11 +19,11 @@
         <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hotel Location <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                  <li><a href="/destinations?filter=Kigali City">Kigali</a></li>
-                    <li><a href="destinations?filter=Northern Province">Northern Province</a></li>
-                    <li><a href="/destinations?filter=Eastern Province">Eastern Province<span class="sr-only">(current)</span></a></li>
-                    <li><a href="/destinations?filter=Western Province">Western Province<span class="sr-only">(current)</span></a></li>
-                    <li><a href="/destinations?filter=South Province">South Province<span class="sr-only">(current)</span></a></li>
+                  <li><a href="/destinations?hotel=Kigali City">Kigali</a></li>
+                    <li><a href="destinations?hotel=Northern Province">Northern Province</a></li>
+                    <li><a href="/destinations?hotel=Eastern Province">Eastern Province<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/destinations?hotel=Western Province">Western Province<span class="sr-only">(current)</span></a></li>
+                    <li><a href="/destinations?hotel=Southern Province">South Province<span class="sr-only">(current)</span></a></li>
                   </ul>
                 </li>
 
@@ -48,6 +51,8 @@
       <ul class="nav navbar-nav navbar-right">
 
         <% if current_user %>
+        <li><a href=""><span class="glyphicon glyphicon-log-out"></span><%=current_user.name%></a></li>
+       
         <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         <% else %>
         <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

@@ -1,23 +1,43 @@
 <div class="container body">
   <h1>All Destinations</h1>
 
-  <div class="row">
+  <%if current_user %>
 
-    <% @destinations.each_slice(3) do |three_destinations| %>
-    <div class="row">
-      <% three_destinations.each do |destination| %>
-      <div class="col-md-4">
-        <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
-        <h2>Description: <%= destination.description %></h2>
-        <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
-           <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
+      <div class="row">
+
+        <% current_user.destinations.each_slice(3) do |three_destinations| %>
+        <div class="row">
+          <% three_destinations.each do |destination| %>
+          <div class="col-md-4">
+            <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
+            <h2>Description: <%= destination.description %></h2>
+            <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+            <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-  <button class="btn btn-success"><a href="/destinations/new">Add Destination</a></button>
-   <button class="btn btn-success"><a href="/destinations">All Destinations</a></button>
+      <button class="btn btn-success"><a href="/destinations/new">Add Destination</a></button>
+      <button class="btn btn-success"><a href="/destinations">All Destinations</a></button>
+ <%else%>
+
+      <div class="row">
+
+        <% @destinations.each_slice(3) do |three_destinations| %>
+        <div class="row">
+          <% three_destinations.each do |destination| %>
+          <div class="col-md-4">
+            <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
+            <h2>Description: <%= destination.description %></h2>
+            <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+            <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+ <%end%>
 </div>
 
 

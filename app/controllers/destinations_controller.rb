@@ -4,9 +4,22 @@ class DestinationsController < ApplicationController
     if params[:filter] 
       input = params[:filter].capitalize
       @destinations = Category.find_by(title: input).destinations.all
-    elsif params[:filter]
-      place = params[:filter].capitalize
+      
+    elsif params[:select]
+      place = params[:select]
       @destinations = Region.find_by(name: place).destinations.all
+
+    elsif params[:hotel]
+      response = params[:hotel]
+      @places =Region.find_by(name: response).destinations.all
+      @destinations = []
+      @places.each do |place|
+         
+        if place.category.title=="Hotels"
+          @destinations << place
+        end
+      end
+
     else
      @destinations = Destination.all
     end
