@@ -2,9 +2,9 @@
   <h1>New Destination</h1>
   <ul>
     <% if @destination.errors.any? %>
-      <% @destination.errors.full_messages.each do |message| %>
-        <li class="model-errors"><%= message %></li> 
-      <% end %>
+    <% @destination.errors.full_messages.each do |message| %>
+    <li class="model-errors"><%= message %></li> 
+    <% end %>
     <% end %>
   </ul>
 
@@ -25,17 +25,20 @@
     <% end %>
   </select>
   
-  </div>
-  <div>
-   Category:
-   <select name="category_id">
-    <option value="" disabled selected>Select your option</option>
-    <% @categories.each do |category| %>
-    <option value="<%=category.id %>"><%=category.title%> </option>
-    <% end %>
-  </select>
-
-  </div>
-  <input type="submit" value="Create destination">
+</div>
+<div>
+ Category:
+ <select name="category_id">
+  <option value="" disabled selected>Select your option</option>
+  <% @categories.each do |category| %>
+  <option value="<%=category.id %>"><%=category.title%> </option>
   <% end %>
+</select>
+
+</div>
+<div> <br>
+ <strong>Upload Image:</strong> <br><input type="file" name="image" accept="image/*;capture=camera">
+</div> <br>
+<input type="submit" value="Create destination">
+<% end %>
 </div>

@@ -6,7 +6,11 @@ class ImagesController < ApplicationController
     @destination = Destination.find_by(id: params[:destination_id])
   end
   def create
-    image = Image.new(url: params[:url], destination_id: params[:destination_id])
+
+    response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
+        
+    image = Image.new( url: response["data"]["img_url"], destination_id: params[:destination_id])
+  
     if image.save
       redirect_to "/destinations/#{image.destination_id}"
     end

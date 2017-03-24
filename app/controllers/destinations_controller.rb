@@ -43,6 +43,9 @@ class DestinationsController < ApplicationController
       category_id: params[:category_id]
       })
     if @destination.save
+      response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
+      @image = Image.create( url: response["data"]["img_url"], destination_id: params[:destination_id])
+  
       redirect_to "/images/new?destination_id=#{@destination.id}"
     else
       flash[:warning] = "destination NOT Created"

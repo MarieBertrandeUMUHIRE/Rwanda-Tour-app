@@ -1,7 +1,11 @@
 <div class="container">
   <%= form_tag "/images", method: :post do %>
+
+  
   <input type="hidden" name="destination_id" value="<%= @destination.id %>">
-  Image Url:<%= text_field_tag :url %>
-  <input type="submit" value="Submit">
-  <% end %>
+  <div> <br>
+   <strong>Upload Image:</strong> <br><input type="file" name="image" accept="image/*;capture=camera">
+ </div> <br>
+ <input type="submit" value="Submit">
+ <% end %>
 </div>
