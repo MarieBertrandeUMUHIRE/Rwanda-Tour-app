@@ -1,4 +1,5 @@
 class Destination < ApplicationRecord
+  mount_uploader :image, ImageUploader
   belongs_to :user, optional: true
   belongs_to :region, optional: true
   belongs_to :category

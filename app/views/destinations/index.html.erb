@@ -11,7 +11,8 @@
           <div class="col-md-4">
             <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
             <h2>Description: <%= destination.description %></h2>
-            <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+           <!--  <img  style="width: 300px" src="<%=destination.image%>"> -->
+            <img style="width: 300px" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
             <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
           </div>
           <% end %>

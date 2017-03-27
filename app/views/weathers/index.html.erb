@@ -1,0 +1,18 @@
+<div class="container-fluid"> 
+<h1>Current Weather </h1>
+<%= form_tag "/weathers", method: :get do %>
+<div class="input">
+ City<input type="text" name="city">
+</div>
+<div class="input">
+ Country<input type="text" name="country">
+</div>
+<div class="input">
+ <input type="submit" value="Choose Location">
+</div>
+<% end %>
+<h2><%= @location_and_time %></h2>
+<h2>Current Date: <%= @weather["date"] %></h2>
+<h2>Current Temp: <%= @weather["temp"] %> F</h2>
+<h2>Current Conditions: <%= @weather["text"] %></h2>
+</div>

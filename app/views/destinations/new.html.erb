@@ -1,5 +1,6 @@
 <div class="container">
   <h1>New Destination</h1>
+
   <ul>
     <% if @destination.errors.any? %>
     <% @destination.errors.full_messages.each do |message| %>
@@ -9,7 +10,7 @@
   </ul>
 
 
-  <%= form_tag "/destinations", method: :post do %>
+  <%= form_tag "/destinations", multipart: true, method: :post do %>
   <div>
     Name: <input type="text" name="name">
   </div>
@@ -35,10 +36,12 @@
   <% end %>
 </select>
 
-</div>
-<div> <br>
- <strong>Upload Image:</strong> <br><input type="file" name="image" accept="image/*;capture=camera">
-</div> <br>
-<input type="submit" value="Create destination">
-<% end %>
+<!-- <div>
+    Upload Your Image
+    <input type="file" name="image">
+  </div> -->
+
+
+  <input type="submit" value="Create destination">
+  <% end %>
 </div>

@@ -35,6 +35,7 @@ class DestinationsController < ApplicationController
   end
 
   def create
+
     @destination = Destination.new({
       name: params[:name],
       description: params[:description],
@@ -42,16 +43,18 @@ class DestinationsController < ApplicationController
       region_id: params[:region_id],
       category_id: params[:category_id]
       })
+
     if @destination.save
-      response = Unirest.post("http://uploads.im/api?upload", parameters: {file: params[:image]}).body
-      @image = Image.create( url: response["data"]["img_url"], destination_id: params[:destination_id])
-  
-      redirect_to "/images/new?destination_id=#{@destination.id}"
+       redirect_to "/images/new?destination_id=#{@destination.id}"
     else
       flash[:warning] = "destination NOT Created"
       render :new
     end
   end
+
+  # def user_params
+  #   params.require(:user).permit(:avatar)
+  # end
 
   def edit
     @regions = Region.all
@@ -90,6 +93,10 @@ class DestinationsController < ApplicationController
     flash[:danger] = "Destination Deleted"
     redirect_to "/destinations"
   end
+  def weather
+    @weathers = Unirest.get("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22kigali%2C%20rwanda%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys").body
+  end
 end
+
 
 

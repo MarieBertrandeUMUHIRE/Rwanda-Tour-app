@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "/", to: 'pages#index'
   get "/pages", to: 'pages#emergency'
   get "/pages/:id", to: 'pages#show'
+  get "/weathers", to: 'weathers#index'
   get "/destinations", to:'destinations#index'
   get "/destinations/new", to: 'destinations#new'
   get "/destinations/:id", to:'destinations#show'
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/destinations/search", to: 'destinations#search'
   post "/users" => "users#create"
+  get "/users/:id/edit", to: 'users#edit'
+  patch "users/:id", to: 'users#update'
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"

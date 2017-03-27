@@ -5,7 +5,8 @@
   <h2><%= @destination.description %></h2>
 
   <img src="<%=@destination.image%>">
- 
+  <img src="<%=@image.url%>">
+
   <% @destination.images.each do |image| %>
     <img class="show-images" src="<%= image.url %>">
     <%= button_to 'Delete', "/images/#{image.id}", method: :delete %>
