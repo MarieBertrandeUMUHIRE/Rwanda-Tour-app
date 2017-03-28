@@ -1,22 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @MarieBertrandeUMUHIRE
- Sign out
- Watch 0
-  Star 0
-  Fork 0 MarieBertrandeUMUHIRE/Rwanda-Tour-app
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathRwanda-Tour-app/app/views/pages/index.html.erb
-d347ab4  2 days ago
-@MarieBertrandeUMUHIRE MarieBertrandeUMUHIRE Added authorisations
-1 contributor
-RawBlameHistory    
-286 lines (234 sloc)  15.8 KB
-  <!-- Add this css File in head tag-->
+ <!-- Add this css File in head tag-->
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 -->
@@ -31,17 +13,17 @@ RawBlameHistory
 
          <div class="jain_container">
 
-         <nav class="navbar navbar-de navbar-custom navbar-fixed-top navbar-offset" role="navigation" style="background-color:#EAECEE">
+           <nav class="navbar navbar-de navbar-custom navbar-fixed-top navbar-offset" role="navigation" style="background-color:#EAECEE; height:80px;">
              <div class="container1 container-fluid"> 
                <div class="navbar-header">
                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                    <span class="sr-only">Toggle navigation</span>
-                  
+
                    <i class="icon-menu"></i> Menu
                  </button>
-                 <a class="navbar-brand" href="#"> <img class="flag" src="<%= image_url('flag.png') %>" /></a>
-               </div>
+                 <a href="#"> <img class="flag" src="<%= image_url('Rwanda.png') %>"/></a>
 
+               </div>
 
                <div class="col-md-8">
                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,16 +44,15 @@ RawBlameHistory
                                <li><a href="/destinations?select=Western Province">Western Province</a></li>
                                <li><a href="/destinations?select=Eastern Province">Eastern Province</a></li>
                                <li class="divider"></li>   
-                              </ul>
-                         </li>
-                          <li class="col-sm-6">
+                             </ul>
+                           </li>
+                           <li class="col-sm-6">
                              <ul>
                                <li class="dropdown-header">More Info about Rwanda</li>
-                               <li><a href="/pages">Emergency Addresses</a></li>
+                               <li><a href="/pages/emergency">Emergency Addresses</a></li>
                                <li><a href="#">Means of transportation</a></li>
-                               <li><a href="/weathers">Weather Condition of Kigali</a></li>
-                              </ul> 
-                         </li>
+                             </ul> 
+                           </li>
                                           <!--  <li class="col-sm-4">
                                              <ul>
                                                <li class="dropdown-header">Much more</li>
@@ -82,7 +63,7 @@ RawBlameHistory
                                              </ul>
                                            </li>
                                          -->
-                      </ul>       
+                                       </ul>       
                                      </li>
 
 
@@ -126,88 +107,90 @@ RawBlameHistory
                                          </div> -->
 
                                          <div class="col-sm-8">          
-                                           <input type="text" class="form-control" id="pwd" placeholder="Search">
-                                         </div>
+                                          <div class="form-group">
+                                            <%= form_tag "/destinations/search", class: "navbar-form navbar-left", method: :post do %>
+                                          </div>
+                                          <input type="text" class="form-control" id="pwd" placeholder="Search">
+                                        </div>
 
-                                         <div class="col-sm-2">
-                                           <button type="submit" class="btn btn-default">Submit</button>
-                                         </div>
+                                        <div class="col-sm-2">
+                                         <button type="submit" class="btn btn-default">Submit</button>
                                        </div>
+                                       <% end %>
                                      </div>
+                                   </div>
 
-                                   </form>
-                                 </div>
-
-                               </div>
-                             </div>
-
-                             <div class="col-md-2 medias">
-
-                               <ul> 
-                                 <li> <a href=""> Facebook <i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                 <li> <a href="">LinkedIn<i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                 
-                               </ul>
-
-                               <div class="classus">
-
-                                 <p> Call us +250 789539076</p>
-
+                                 </form>
                                </div>
 
                              </div>
+                           </div>
 
+                           <div> 
+                                <a href=""><img class="media" src="<%= image_url('facebook.png') %>"/></a>
+                                <a href=""><img class="media" src="<%= image_url('twitter.png') %>"/></a>
+
+                            
+
+                             <div class="classus">
+
+                               <p> Call us +250 789539076</p>
+
+                             </div>
 
                            </div>
 
-                         </nav>
-                       </head>
-                       <body>
 
-                         <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+                         </div>
 
-                           <!-- Indicators -->
-                           <ol class="carousel-indicators">
-                             <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
-                             <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
-                             <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
-                           </ol>
+                       </nav>
+                     </head>
+                     <body>
 
-                           <!-- Wrapper For Slides -->
-                           <div class="carousel-inner" role="listbox">
+                       <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
 
-                             <!-- Third Slide -->
-                             <div class="item active">
+                         <!-- Indicators -->
+                         <ol class="carousel-indicators">
+                           <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+                           <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+                           <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+                         </ol>
 
-                               <!-- Slide Background -->
-                               <img class="home" src="https://www.cedarberg-travel.com/wp-content/uploads/cedarberg-nyungwe-forest-lodge-presidential-suite-1.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                         <!-- Wrapper For Slides -->
+                         <div class="carousel-inner" role="listbox">
 
-                               <div class="bs-slider-overlay"></div>
+                           <!-- Third Slide -->
+                           <div class="item active">
 
-                               <div class="container">
-                                 <div class="row">
-                                   <!-- Slide Text Layer -->
-                                   <div class="slide-text slide_style_right">
-                                     <h1 data-animation="animated zoomInLeft">Feel at Home</h1>
-                                     <a href="/destinations" target="_blank" class="btn btn-default">View more Destinations</a>
+                             <!-- Slide Background -->
+                             <img class="home" src="<%= image_url('bedroom.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
 
-                                   </div>
+                             <div class="bs-slider-overlay"></div>
+
+                             <div class="container">
+                               <div class="row">
+                                 <!-- Slide Text Layer -->
+                                 <div class="slide-text slide_style_right">
+                                   <h1 data-animation="animated zoomInLeft">Feel at Home</h1>
+                                   <a href="/destinations" target="_blank" class="btn btn-default">View more Destinations</a>
 
                                  </div>
+
                                </div>
                              </div>
-                             <!-- End of Slide -->
+                           </div>
+                           <!-- End of Slide -->
 
-                             <!-- Second Slide -->
-                             <div class="item">
+                           <!-- Second Slide -->
+                           <div class="item">
 
-                               <!-- Slide Background -->
-                               <img class="home" src="<%= image_url('bedroom.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
-                               <div class="bs-slider-overlay"></div>
-                               <!-- Slide Text Layer -->
-                               <div class="slide-text slide_style_center">
-                                 <h1 data-animation="animated flipInX"></h1>
-                                 <h1 data-animation="animated zoomInLeft">Rwanda is the best place to be</h1>
+                             <!-- Slide Background -->
+                             <img class="home" src="<%= image_url('kgl.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                             <div class="bs-slider-overlay"></div>
+                             <!-- Slide Text Layer -->
+                             <div class="slide-text slide_style_center">
+                               <h1 data-animation="animated flipInX"></h1>
+                               <h1 data-animation="animated zoomInLeft">Rwanda is the best place to be</h1>
                <!-- <a href="htth1://bootstrapthemes.co/" target="_blank" class="btn btn-default" data-animation="animated fadeInUp">select one</a>
                <a href="http://bootstrapthemes.co/" target="_blank"  class="btn btn-primary" data-animation="animated fadeInDown">select two</a> -->
              </div>
@@ -274,7 +257,7 @@ RawBlameHistory
           <div class="item">
 
             <!-- Slide Background -->
-            <img class="home" src="<%= image_url('kivu.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
+            <img class="home" src="<%= image_url('urukari.jpg') %>" alt="Bootstrap Touch Slider"  class="slide-image"/>
             <div class="bs-slider-overlay"></div>
             <!-- Slide Text Layer -->
             <div class="slide-text slide_style_center">

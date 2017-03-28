@@ -1,20 +1,73 @@
-<div class="container">
-
-  <h1><%= @destination.name %></h1>
-
-  <h2><%= @destination.description %></h2>
-
-  <img src="<%=@destination.image%>">
- 
-  <% @destination.images.each do |image| %>
-    <img class="show-images" src="<%= image.url %>">
-    <%= button_to 'Delete', "/images/#{image.id}", method: :delete %>
-  <% end %>
-
-  <a href="/images/new?destination_id=<%= @destination.id %>" class="btn btn-success" role="button">Add Image</a>
-  <a href="/destinations/<%= @destination.id %>/edit" class="btn btn-success" role="button">Edit</a>
-</div>
 
 
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>eCommerce Product Detail</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+
+            <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><img src="<%= @destination.images.first.url%>"> <%= button_to 'Delete', "images/#{@destination.images.first.id}", method: :delete if current_user %></div>
+
+
+              <div class="tab-pane" id="pic-2"><img src="<%= @destination.images.second.url%>"> <%= button_to 'Delete', "images/#{@destination.images.second.id}", method: :delete  if current_user%></div>
+              <div class="tab-pane" id="pic-3"><img src="<%= @destination.images.last.url%>"> <%= button_to 'Delete', "images/#{@destination.images.last.id}", method: :delete  if current_user%></div>
+              
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="<%= @destination.images.first.url %>" /></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="<%= @destination.images.second.url %>" /></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><img src="<%= @destination.images.last.url %>" /></a></li>
+              
+            </ul>
+            
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title"><%= @destination.name %></h3>
+            
+            <p class="product-description"><%= @destination.description%></p>
+            <!-- <h4 class="price">current price: <span>$180</span></h4>
+            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+            <h5 class="sizes">sizes:
+              <span class="size" data-toggle="tooltip" title="small">s</span>
+              <span class="size" data-toggle="tooltip" title="medium">m</span>
+              <span class="size" data-toggle="tooltip" title="large">l</span>
+              <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+            </h5>
+            <h5 class="colors">colors:
+              <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+              <span class="color green"></span>
+              <span class="color blue"></span>
+            </h5> -->
+            <%if current_user%>
+            <div class="action">
+             <a href="/images/new?destination_id=<%= @destination.id %>" class="add-to-cart btn btn-default" role="button">Add Image</a>
+             <%= button_to "Edit", "/destinations/#{@destination.id}/edit", class: "btn btn-default", method: :get %>
+             <% end %>
+             <!--    <button  type="button">Add Image</button> -->
+             
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</body>
+</html>
 
