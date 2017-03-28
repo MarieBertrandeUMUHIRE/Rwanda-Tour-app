@@ -22,6 +22,11 @@
     margin-left: auto;
     margin-right: auto;
     }*/
+    .item {
+      display: none;
+      position: relative;
+      .transition(.1s ease-in-out left);
+    }
 
     .flag{
       height:auto;
@@ -29,7 +34,7 @@
       margin-top: 8px;
     }
 
-.media{
+    .media{
       height:auto;
       width:20px;
       margin-top: 8px;
@@ -207,6 +212,7 @@ body{ }
 .jain_container .navbar-nav{    margin-top: 10px;}
 .jain_container .btn-default:hover{ background:#000; border-color:#000;}
 .medias ul li a {
+  font-family: Mavondo;
   padding-top: -20px;
   height: 40px;
   width: 40px;
@@ -315,7 +321,7 @@ a.booking_qx {
 
 #myCarousel_hotels .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev{    margin-left: -50px;    font-size: 50px;     color: #4c1f1e;}
 #myCarousel_hotels .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next{    margin-right: -50px;     font-size: 50px;    color: #4c1f1e;}
-#myCarousel_hotels .carousel-control{opacity: .9;}
+#myCarousel_hotels .carousel-control{opacity: 9;}
 
 .banner_hotels_all_abouts p{font-family: RadikalW01-Medium;line-height: 30px;text-align: center;}
 .banner_hotels_all_abouts p span{ color:#ff523f;}
@@ -703,4 +709,8 @@ a.offers_link{
                                                                                   -webkit-transform: scale(1);
                                                                                   transform: scale(1); } }
 
-/*# sourceMappingURL=style.css.map */
+
+
+
+
+                                                                                  

@@ -26,6 +26,8 @@ class DestinationsController < ApplicationController
   end
   def show
     @destination = Destination.find_by(id: params[:id])
+     @regions = Region.all
+    @categories = Category.all
   end
 
   def new
