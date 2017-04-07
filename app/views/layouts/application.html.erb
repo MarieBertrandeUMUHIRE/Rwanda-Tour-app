@@ -7,13 +7,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Macondo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 
    <!--  the following code stops the general nav-bar from appearing on the home page -->
    
     <% unless controller.controller_name == "pages" && controller.action_name == "index"%>
-    <nav id="mainNav" class="navbar navbar-inverse navbar-custom navbar" style="height:50px">
+    <nav id="mainNav" class="navbar navbar-inverse" style="height:50px">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">UMUHIRE LTD</a>
+        <a class="navbar-brand" href="/">RWANDA TOUR GUIDE</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="dropdown">
@@ -25,10 +28,12 @@
                     <li><a href="/destinations?hotel=Western Province">Western Province<span class="sr-only">(current)</span></a></li>
                     <li><a href="/destinations?hotel=Southern Province">South Province<span class="sr-only">(current)</span></a></li>
                   </ul>
+                 
+                
                 </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations <span class="caret"></span></a>
+          <a href="/destinations" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destinations <span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li><a href="/destinations?filter=parks">Visit Parks </a></li>
             <li><a href="destinations?filter=lakes">Visit Lakes</a></li>
@@ -80,7 +85,7 @@
     <footer class="footer">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <p>Copyright &copy; 2017, UMUHIRE LTD - Kigali</p>
+          <p>Copyright &copy; 2017, RWANDA TOUR GUIDE - Kigali</p>
         </div>
       </footer>
     </div>

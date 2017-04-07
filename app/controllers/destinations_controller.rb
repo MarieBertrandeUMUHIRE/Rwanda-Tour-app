@@ -83,7 +83,7 @@ class DestinationsController < ApplicationController
   end
   def search
     search_query = params[:search_input]
-    @destinations = Destination.where("name LIKE ? OR description LIKE ?", "%#{search_query}%", "%#{search_query}%")
+    @destinations = Destination.where("name ILIKE ? OR description ILIKE ?", "%#{search_query}%", "%#{search_query}%")
     if @destinations.empty?
       flash[:info] = "No Results"
     end

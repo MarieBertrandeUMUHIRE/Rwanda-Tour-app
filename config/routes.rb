@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete "/destinations/:id", to: 'destinations#destroy'
   get "/signup" => "users#new"
   post "/destinations/search", to: 'destinations#search'
-  post "/pages/search", to: 'pages#search'
+  # post "/pages/search", to: 'pages#search'
   post "/users" => "users#create"
   get "/users/:id/edit", to: 'users#edit'
   patch "users/:id", to: 'users#update'

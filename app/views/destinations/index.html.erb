@@ -1,28 +1,32 @@
-<div class="container body">
+
+
+<div class="container body" style="height: 250px;padding-right: 7px; padding-left: 7px;margin-bottom: 15px;"> 
   <h1>All Destinations</h1>
 
   <%if current_user %>
 
       <div class="row">
+    
+      <button class="btn btn-success" ><a href="/destinations/new">Add Destination</a></button>
+      <button class="btn btn-success"><a href="/destinations">All Destinations</a></button>
 
         <% current_user.destinations.each_slice(3) do |three_destinations| %>
         <div class="row">
           <% three_destinations.each do |destination| %>
           <div class="col-md-4">
+      
             <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
             <h2>Description: <%= destination.description %></h2>
            <!--  <img  style="width: 300px" src="<%=destination.image%>"> -->
-            <img style="width: 300px" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+            <img style="width: 350px;" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
             <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
+       
           </div>
           <% end %>
-        </div>
         <% end %>
       </div>
-      <button class="btn btn-success"><a href="/destinations/new">Add Destination</a></button>
-      <button class="btn btn-success"><a href="/destinations">All Destinations</a></button>
  <%else%>
-
+     
       <div class="row">
 
         <% @destinations.each_slice(3) do |three_destinations| %>
@@ -32,12 +36,15 @@
             <h2><%= link_to destination.name, "/destinations/#{destination.id}" %></h2>
             <h2>Description: <%= destination.description %></h2>
             <img class="index" src="<%= destination.images.sample.url if destination.images.any? %>" class="img-responsive">
+            <%if current_user%>
             <%= button_to 'Delete', "/destinations/#{destination.id}", method: :delete %>
+            <% end%>
           </div>
           <% end %>
         </div>
         <% end %>
       </div>
+    </div>
  <%end%>
 </div>
 
